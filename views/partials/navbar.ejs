@@ -1,0 +1,64 @@
+<!-- Mobile navbar -->
+<div class="collapse" id="navbarToggleExternalContent">
+    <div class="p-1 s2i-collapse">
+        <a class="flex-sm-fill text-sm-center nav-link nav__s2i-header" aria-current="page" href="/report">Report</a>
+        <a class="flex-sm-fill text-sm-center nav-link nav__s2i-header" href="/earth-status">Earth status</a>
+    </div>
+</div>
+<nav class="navbar">
+    <div class="container-fluid">
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars s2i-menu"></i>
+        </button>
+        <a class="text-sm-end nav-link" href="/"><img class="nav__s2i-header-logo" src="/static/logo.png"/></a>
+    </div>
+    <div class="nav__s2i-second">
+        <div class="nav__s2i-newstitle">
+            <p>Latest news:</p>
+        </div>
+        <div class="nav__s2i-newslist">
+            <div class="glide glideMobile">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <% news.forEach(function(article) { %>
+                            <div class="glide__slide">
+                                <div class="article">
+                                    <a href="<%- article.url %>"><%= article.title %></a>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Desktop & tablet navbar -->
+<nav class="nav nav-pills flex-column">
+    <div class="nav nav-pills flex-column flex-sm-row nav__s2i-first">
+        <a class="flex-sm-fill text-sm-center nav-link nav__s2i-header" aria-current="page" href="/report">Report</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="/"><img class="nav__s2i-header-logo" src="/static/logo.png"/></a>
+        <a class="flex-sm-fill text-sm-center nav-link nav__s2i-header" href="/earth-status">Earth status</a>
+    </div>
+    <div class="nav nav__s2i-second">
+        <div class="nav__s2i-newstitle">
+            <p>Latest news:</p>
+        </div>
+        <div class="nav__s2i-newslist">
+            <div class="glide glideDesktop">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <% news.forEach(function(article) { %>
+                            <div class="glide__slide">
+                                <div class="article">
+                                    <a href="<%- article.url %>"><%= article.title %></a>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

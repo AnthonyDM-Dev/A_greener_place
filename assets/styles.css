@@ -1,0 +1,719 @@
+@keyframes up-and-down {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: 40px;
+  }
+  50% {
+    top: 0;
+  }
+  75% {
+    top: -40px;
+  }
+  100% {
+    top: 0;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.max-size {
+  display: flex;
+  justify-content: center;
+}
+
+/* For latest news navbar */
+body {
+  background-color: white;
+}
+
+.nav {
+  width: 100%;
+  align-items: center;
+  align-content: center;
+}
+.nav__s2i-first {
+  background-color: #008037;
+}
+.nav__s2i-second {
+  background-color: #7ed957;
+  height: 50px;
+  padding: 0 30px;
+}
+.nav__s2i-header {
+  font-size: 24px;
+  font-weight: lighter;
+  color: white;
+}
+.nav__s2i-header-logo {
+  width: 150px;
+  height: auto;
+}
+.nav__s2i-header:hover {
+  color: #008037;
+  background-color: white;
+}
+.nav__s2i-newslist {
+  width: calc(100% - 180px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.nav__s2i-newslist ul {
+  margin-bottom: 0 !important;
+}
+.nav__s2i-newslist .article {
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nav__s2i-newslist .article a {
+  font-size: 20px;
+  font-weight: lighter;
+  color: white;
+  margin-bottom: 0 !important;
+}
+.nav__s2i-newstitle {
+  width: 180px;
+  font-weight: bold;
+  font-size: 24px;
+  color: white;
+}
+.nav__s2i-newstitle p {
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+}
+.nav__s2i-title {
+  font-size: 24px;
+  color: white;
+  padding: 10px;
+  margin: 0;
+}
+
+.s2i-footer {
+  width: 100%;
+  height: 50px;
+  background-color: #008037;
+}
+.s2i-footer__text {
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
+
+#homepage, #earth-status {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#homepage .s2i-welcome, #earth-status .s2i-welcome {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fffaeb;
+  height: 600px;
+}
+#homepage .s2i-welcome__text, #earth-status .s2i-welcome__text {
+  flex: 1;
+  text-align: center;
+  padding: 0 40px;
+}
+#homepage .s2i-welcome__text .text1, #earth-status .s2i-welcome__text .text1 {
+  font-size: 40px;
+}
+#homepage .s2i-welcome__text .text2, #earth-status .s2i-welcome__text .text2 {
+  font-size: 50px;
+}
+#homepage .s2i-welcome__text .text3, #earth-status .s2i-welcome__text .text3 {
+  font-size: 24px;
+  margin-bottom: 0;
+  margin: 10px auto;
+}
+#homepage .s2i-welcome__earth, #earth-status .s2i-welcome__earth {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#homepage .s2i-welcome__earth img, #earth-status .s2i-welcome__earth img {
+  position: relative;
+  width: 60%;
+  max-width: 400px;
+  animation-name: up-and-down;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+#homepage .s2i-last-reports, #earth-status .s2i-last-reports {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#homepage .s2i-last-reports .reports, #earth-status .s2i-last-reports .reports {
+  margin-top: 20px;
+  width: 80%;
+  max-width: 800px;
+}
+#homepage .s2i-last-reports .reports__text, #earth-status .s2i-last-reports .reports__text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+#homepage .s2i-last-reports .reports__text-header, #earth-status .s2i-last-reports .reports__text-header {
+  font-size: 40px;
+  margin-bottom: 0;
+}
+#homepage .s2i-last-reports .reports__text-link, #earth-status .s2i-last-reports .reports__text-link {
+  font-size: 20px;
+  color: black;
+}
+#homepage .s2i-last-reports .reports__cards, #earth-status .s2i-last-reports .reports__cards {
+  display: flex;
+  flex-direction: column;
+}
+#homepage .s2i-last-reports .reports__cards .card, #earth-status .s2i-last-reports .reports__cards .card {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  background-color: #ebded4;
+  border: none;
+  border-radius: 0;
+  transition: box-shadow 0.7s, transform 0.7s;
+}
+#homepage .s2i-last-reports .reports__cards .card:hover, #homepage .s2i-last-reports .reports__cards .card:focus, #earth-status .s2i-last-reports .reports__cards .card:hover, #earth-status .s2i-last-reports .reports__cards .card:focus {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transform: scale(1.01);
+  transition: box-shadow 0.7s, transform 0.7s;
+}
+#homepage .s2i-last-reports .reports__cards .card-text, #earth-status .s2i-last-reports .reports__cards .card-text {
+  flex: 1.5;
+  font-size: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#homepage .s2i-last-reports .reports__cards .card-text-title, #homepage .s2i-last-reports .reports__cards .card-text-upload, #homepage .s2i-last-reports .reports__cards .card-text-location, #earth-status .s2i-last-reports .reports__cards .card-text-title, #earth-status .s2i-last-reports .reports__cards .card-text-upload, #earth-status .s2i-last-reports .reports__cards .card-text-location {
+  margin-bottom: 0;
+}
+#homepage .s2i-last-reports .reports__cards .card-text-title, #earth-status .s2i-last-reports .reports__cards .card-text-title {
+  font-size: 30px;
+}
+#homepage .s2i-last-reports .reports__cards .card-image, #earth-status .s2i-last-reports .reports__cards .card-image {
+  flex: 1.5;
+}
+#homepage .s2i-last-reports .reports__cards .card-image img, #earth-status .s2i-last-reports .reports__cards .card-image img {
+  width: 100%;
+  max-height: 350px;
+  padding: 20px;
+}
+#homepage .s2i-last-reports .s2i-pagination, #earth-status .s2i-last-reports .s2i-pagination {
+  border: 0;
+}
+#homepage .s2i-last-reports .s2i-page-link, #earth-status .s2i-last-reports .s2i-page-link {
+  border-radius: 0;
+  font-size: 24px;
+  background-color: white;
+  color: #008037;
+}
+#homepage .s2i-last-reports .s2i-page-link-active, #earth-status .s2i-last-reports .s2i-page-link-active {
+  border-radius: 0;
+  font-size: 24px;
+  background-color: #008037;
+  color: white;
+}
+
+#report .s2i-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#report .s2i-form-container .formats {
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+#report .s2i-form-container__form {
+  display: flex;
+  justify-content: center;
+  background-color: #ebded4;
+  margin-bottom: 20px;
+}
+#report .s2i-form-container__form .grouping-container {
+  width: 800px;
+}
+#report .s2i-form-container__form .grouping-container .location-data__field {
+  padding: 10px 0;
+}
+#report .s2i-form-container__form .grouping-container .user-info, #report .s2i-form-container__form .grouping-container .location-data {
+  margin: 30px 80px;
+}
+#report .s2i-form-container__form .grouping-container .user-info__field, #report .s2i-form-container__form .grouping-container .location-data__field {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#report .s2i-form-container__form .grouping-container .user-info__title, #report .s2i-form-container__form .grouping-container .location-data__title {
+  font-size: 30px;
+  font-weight: bold;
+}
+#report .s2i-form-container__form .grouping-container .user-info__label, #report .s2i-form-container__form .grouping-container .location-data__label {
+  font-size: 24px;
+}
+#report .s2i-form-container__form .grouping-container .user-info__input, #report .s2i-form-container__form .grouping-container .location-data__input {
+  width: 250px;
+  background-color: transparent;
+  border-width: 0;
+  border-bottom: 1px solid black;
+  color: black;
+  font-size: 24px;
+}
+#report .s2i-form-container__form .grouping-container .user-info__input::placeholder, #report .s2i-form-container__form .grouping-container .location-data__input::placeholder {
+  color: #7e95a1;
+  font-weight: lighter;
+}
+#report .s2i-form-container__form .grouping-container .user-info__select, #report .s2i-form-container__form .grouping-container .location-data__select {
+  width: 250px;
+  font-size: 24px;
+  font-weight: lighter;
+}
+#report .s2i-form-container__form .grouping-container .user-info .upload-container, #report .s2i-form-container__form .grouping-container .location-data .upload-container {
+  width: 250px;
+  overflow: hidden;
+}
+#report .s2i-form-container__form .grouping-container .user-info .upload-container p, #report .s2i-form-container__form .grouping-container .location-data .upload-container p {
+  margin-bottom: 0;
+}
+#report .s2i-form-container__form .grouping-container .user-info__upload, #report .s2i-form-container__form .grouping-container .location-data__upload {
+  color: transparent;
+}
+#report .s2i-form-container__form .grouping-container .user-info__upload::before, #report .s2i-form-container__form .grouping-container .location-data__upload::before {
+  content: "Upload an image";
+  color: white;
+  font-size: 24px;
+  font-weight: lighter;
+  padding-left: 25px;
+}
+#report .s2i-form-container__form .grouping-container .user-info__upload::-webkit-file-upload-button, #report .s2i-form-container__form .grouping-container .location-data__upload::-webkit-file-upload-button {
+  display: none;
+}
+#report .s2i-form-container__form .grouping-container .submit-area {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+#report .s2i-form-container__form .grouping-container .submit-area input {
+  width: 250px;
+  font-size: 24px;
+  font-weight: lighter;
+}
+#report .s2i-form-container__title {
+  width: 800px;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 40px;
+  padding: 15px 0;
+}
+#report .s2i-form-container__title p {
+  margin-bottom: 0;
+}
+
+#earth-status .s2i-location {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#earth-status .s2i-location__search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+}
+#earth-status .s2i-location__icon {
+  font-size: 24px;
+  margin: 0 20px 0 10px;
+}
+#earth-status .s2i-location__input {
+  font-size: 24px;
+  width: 290px;
+  background-color: transparent;
+  border-width: 0;
+  border-bottom: 1px solid black;
+  color: black;
+  font-size: 22px;
+}
+#earth-status .s2i-location__input::placeholder {
+  color: #7e95a1;
+  font-weight: lighter;
+}
+#earth-status .s2i-location .reports {
+  margin: 10px;
+}
+#earth-status .s2i-location .reports__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#earth-status .s2i-location .reports__text-header {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 0;
+}
+#earth-status .s2i-location .reports__text-link {
+  font-size: 20px;
+  color: black;
+}
+#earth-status .s2i-maps {
+  display: flex;
+  justify-content: center;
+}
+#earth-status .s2i-maps__iframe {
+  border: 0;
+  width: 100%;
+  height: 500px;
+  max-width: 800px;
+}
+
+.error-page {
+  height: 100vh;
+  background-color: #008037;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.error-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.error-button {
+  width: auto !important;
+}
+
+.s2i-button-primary {
+  background-color: #008037;
+  border: none;
+  border-radius: 0;
+}
+.s2i-button-big {
+  width: 250px;
+  font-size: 24px;
+  font-weight: lighter;
+}
+
+.s2i-submit-popup {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(186, 210, 215, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.s2i-submit-popup__popup {
+  background-color: #fffaeb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
+}
+.s2i-submit-popup__popup p {
+  margin-bottom: 10px;
+}
+.s2i-submit-popup__popup .title {
+  font-size: 50px;
+}
+.s2i-submit-popup__popup .description {
+  font-size: 30px;
+  font-weight: lighter;
+}
+.s2i-submit-popup__popup .subdescription {
+  font-size: 24px;
+  font-weight: lighter;
+}
+.s2i-submit-popup__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#outer {
+  overflow: hidden;
+}
+
+#outer div {
+  display: inline-block;
+}
+
+#loop {
+  white-space: nowrap;
+  animation: loop-anim 15s linear infinite;
+}
+
+@keyframes loop-anim {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -50%;
+  }
+}
+@media (max-width: 767px) {
+  .collapse {
+    background-color: #008037;
+  }
+
+  .navbar {
+    background-color: #008037;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .navbar .s2i-menu {
+    color: white;
+  }
+  .navbar .container-fluid {
+    padding: 0 40px;
+  }
+
+  .nav {
+    display: none;
+  }
+  .nav__s2i-second {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 60px;
+  }
+  .nav__s2i-newstitle {
+    text-align: center;
+    width: auto;
+    font-size: 16px;
+  }
+  .nav__s2i-newslist {
+    width: 100%;
+  }
+  .nav__s2i-newslist .article a {
+    font-size: 16px;
+  }
+
+  .s2i-collapse {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .s2i-footer {
+    height: auto;
+  }
+  .s2i-footer__text {
+    padding: 20px;
+  }
+
+  #homepage .s2i-welcome, #earth-status .s2i-welcome {
+    height: 500px;
+  }
+  #homepage .s2i-welcome__text .text1, #earth-status .s2i-welcome__text .text1 {
+    font-size: 34px;
+  }
+  #homepage .s2i-welcome__text .text2, #earth-status .s2i-welcome__text .text2 {
+    font-size: 40px;
+  }
+  #homepage .s2i-welcome__text .text3, #earth-status .s2i-welcome__text .text3 {
+    font-size: 20px;
+    margin: 5px auto;
+  }
+  #homepage .s2i-welcome__earth, #earth-status .s2i-welcome__earth {
+    display: none;
+  }
+  #homepage .s2i-last-reports .reports, #earth-status .s2i-last-reports .reports {
+    margin-top: 20px;
+    width: 95%;
+    align-items: center;
+  }
+  #homepage .s2i-last-reports .reports__text, #earth-status .s2i-last-reports .reports__text {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #homepage .s2i-last-reports .reports__text-header, #earth-status .s2i-last-reports .reports__text-header {
+    font-size: 30px;
+  }
+  #homepage .s2i-last-reports .reports__cards, #earth-status .s2i-last-reports .reports__cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #homepage .s2i-last-reports .reports__cards .card, #earth-status .s2i-last-reports .reports__cards .card {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 5px;
+  }
+  #homepage .s2i-last-reports .reports__cards .card-text, #earth-status .s2i-last-reports .reports__cards .card-text {
+    order: 2;
+    flex: 2;
+    font-size: 18px;
+    padding: 10px;
+  }
+  #homepage .s2i-last-reports .reports__cards .card-text-title, #earth-status .s2i-last-reports .reports__cards .card-text-title {
+    font-size: 24px;
+  }
+  #homepage .s2i-last-reports .reports__cards .card-image img, #earth-status .s2i-last-reports .reports__cards .card-image img {
+    padding: 10px;
+  }
+
+  #earth-status .s2i-maps__iframe {
+    height: 300px;
+  }
+
+  #report .s2i-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #report .s2i-form-container .formats {
+    font-style: italic;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  #report .s2i-form-container__form {
+    display: flex;
+    justify-content: center;
+    background-color: #ebded4;
+    margin-bottom: 10px;
+  }
+  #report .s2i-form-container__form .grouping-container {
+    width: auto;
+  }
+  #report .s2i-form-container__form .grouping-container .location-data__field {
+    padding: 10px 0;
+  }
+  #report .s2i-form-container__form .grouping-container .user-info, #report .s2i-form-container__form .grouping-container .location-data {
+    margin: 20px;
+  }
+  #report .s2i-form-container__form .grouping-container .user-info__title, #report .s2i-form-container__form .grouping-container .location-data__title {
+    font-size: 24px;
+  }
+  #report .s2i-form-container__form .grouping-container .user-info__label, #report .s2i-form-container__form .grouping-container .location-data__label {
+    font-size: 20px;
+    padding-right: 10px;
+  }
+  #report .s2i-form-container__form .grouping-container .user-info__input, #report .s2i-form-container__form .grouping-container .location-data__input {
+    font-size: 20px;
+  }
+  #report .s2i-form-container__form .grouping-container .user-info__select, #report .s2i-form-container__form .grouping-container .location-data__select {
+    font-size: 20px;
+  }
+  #report .s2i-form-container__form .grouping-container .user-info__upload, #report .s2i-form-container__form .grouping-container .location-data__upload {
+    color: transparent;
+  }
+  #report .s2i-form-container__form .grouping-container .user-info__upload::before, #report .s2i-form-container__form .grouping-container .location-data__upload::before {
+    content: "Upload an image";
+    font-size: 20px;
+    padding-left: 45px;
+  }
+  #report .s2i-form-container__title {
+    width: auto;
+    justify-content: center;
+    font-size: 30px;
+    padding: 15px 0;
+  }
+}
+@media (min-width: 768px) {
+  .navbar {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 900px) {
+  #homepage .s2i-welcome, #earth-status .s2i-welcome {
+    height: 500px;
+  }
+  #homepage .s2i-welcome__text .text1, #earth-status .s2i-welcome__text .text1 {
+    font-size: 34px;
+  }
+  #homepage .s2i-welcome__text .text2, #earth-status .s2i-welcome__text .text2 {
+    font-size: 40px;
+  }
+  #homepage .s2i-welcome__text .text3, #earth-status .s2i-welcome__text .text3 {
+    font-size: 20px;
+    margin: 5px auto;
+  }
+  #homepage .s2i-last-reports .reports, #earth-status .s2i-last-reports .reports {
+    width: 95%;
+  }
+  #homepage .s2i-last-reports .reports__cards .card-text-status, #earth-status .s2i-last-reports .reports__cards .card-text-status {
+    margin-bottom: 0;
+  }
+
+  #report .s2i-form-container .formats {
+    font-style: italic;
+    font-size: 14px;
+  }
+  #report .s2i-form-container__form .grouping-container {
+    width: auto;
+  }
+  #report .s2i-form-container__form .grouping-container .location-data__field {
+    padding: 10px 0;
+  }
+  #report .s2i-form-container__form .grouping-container .user-info, #report .s2i-form-container__form .grouping-container .location-data {
+    margin: 30px;
+  }
+  #report .s2i-form-container__form .grouping-container .user-info__title, #report .s2i-form-container__form .grouping-container .location-data__title {
+    font-size: 30px;
+  }
+  #report .s2i-form-container__form .grouping-container .user-info__label, #report .s2i-form-container__form .grouping-container .location-data__label {
+    font-size: 24px;
+    padding-right: 10px;
+  }
+  #report .s2i-form-container__title {
+    width: auto;
+  }
+}
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  #homepage .s2i-last-reports .reports, #earth-status .s2i-last-reports .reports {
+    margin-top: 10px;
+  }
+  #homepage .s2i-last-reports .reports__text-header, #earth-status .s2i-last-reports .reports__text-header {
+    font-size: 30px;
+    margin-bottom: 0;
+  }
+  #homepage .s2i-last-reports .reports__text-link, #earth-status .s2i-last-reports .reports__text-link {
+    font-size: 20px;
+    color: black;
+  }
+  #homepage .s2i-last-reports .reports__cards .card, #earth-status .s2i-last-reports .reports__cards .card {
+    margin-bottom: 10px;
+  }
+  #homepage .s2i-last-reports .reports__cards .card-text, #earth-status .s2i-last-reports .reports__cards .card-text {
+    flex: 2;
+    font-size: 20px;
+    padding: 20px;
+  }
+  #homepage .s2i-last-reports .reports__cards .card-text-title, #earth-status .s2i-last-reports .reports__cards .card-text-title {
+    font-size: 30px;
+  }
+  #homepage .s2i-last-reports .reports__cards .card-text-status, #earth-status .s2i-last-reports .reports__cards .card-text-status {
+    margin-bottom: 0;
+  }
+  #homepage .s2i-last-reports .reports__cards .card-image img, #earth-status .s2i-last-reports .reports__cards .card-image img {
+    padding: 20px;
+  }
+}

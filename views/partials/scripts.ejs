@@ -1,0 +1,86 @@
+<!-- SITE JAVASCRIPT -->
+<script>
+    // getFilename: Show file name.
+    function getFilename() {
+        if(fileInput.files.length == 0 ) {
+            showFile.innerHTML = "No file selected";
+        } else {
+            showFile.innerHTML = fileInput.files[0].name;
+        }
+    }
+    //
+    var fileInput = document.getElementById("image");
+    var showFile = document.getElementById('show-file');
+    fileInput.addEventListener("change", getFilename);
+
+    // getDataURL: get & submit form data.
+    function getDataURL() {
+        let form = document.forms.formReport;
+        var data = new FormData(form);
+        return data;
+    }
+
+    // closePopup: close popup in report page
+    function closePopup() {
+        popup.style.visibility = 'hidden';
+    }
+
+    // POST form using fetch()
+    async function submitForm() {
+        return await fetch("http://localhost:3000/report", {
+            method: "POST",
+            body: getDataURL(),
+        })
+        
+        // Converting to JSON & updating DOM.
+        .then(res => {
+            res.json().then(data => {
+                popup.style.visibility = 'visible';
+                popupTitle.textContent = data.title;
+                popupDescription.textContent = data.description;
+                popupSub1.textContent = data.sub1.length == 0 ? '' : (data.sub1 + '.');
+                popupSub2.textContent = data.sub2;
+                popupButtons.innerHTML = '';
+                data.buttons.forEach(btn => {
+                    switch (btn.tag) {
+                        case 'a':
+                            var buttonHTML = `<div><${btn.tag} href="${btn.href}" class="${btn.class}">${btn.textContent}</${btn.tag}></div>`;
+                            popupButtons.insertAdjacentHTML('beforeend', buttonHTML);
+                            break;
+                        case 'button':
+                            var buttonHTML = `<div><${btn.tag} type="${btn.type}" class="${btn.class}" onclick="${btn.onclick}">${btn.textContent}</${btn.tag}></div>`;
+                            popupButtons.insertAdjacentHTML('beforeend', buttonHTML);
+                            break;
+                    }
+                })
+
+            })
+        });
+    }
+</script>
+<!-- GLIDE.JS -->
+<script>
+  new Glide('.glideDesktop', {
+    type: 'carousel',
+    startAt: 0,
+    perView: 2,
+    animationDuration: 15000,
+    autoplay: true,
+    hoverpause: true,
+    animationTimingFunc: 'linear',
+  }).mount()
+
+  new Glide('.glideMobile', {
+    type: 'carousel',
+    startAt: 0,
+    breakpoints: {
+        575: {
+            perView: 1
+        }
+    },
+    animationDuration: 7000,
+    autoplay: true,
+    hoverpause: true,
+    animationTimingFunc: 'ease-in-out',
+  }).mount()
+</script>

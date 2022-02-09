@@ -1,0 +1,9 @@
+{
+    "dbHost"     : "localhost",
+    "dbUser"     : "root",
+    "dbPassword" : "mysql",
+    "dbDatabase" : "s2i_node_project",
+    "dbMultipleStatements" : true,
+    "multerDestination": "./assets/fake-cms/",
+    "multerFileSize": 3000000
+}

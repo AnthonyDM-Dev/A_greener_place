@@ -1,0 +1,23 @@
+<div class="s2i-last-reports">
+    <div class="reports reports__text">
+        <p class="reports__text-header">Last reports</p>
+        <a href="/earth-status" class="reports__text-link">Show all reports</a>
+    </div>
+    <div class="reports reports__cards">
+        <% reports.forEach(function(report) { %>
+            <div class="card">
+                <div class="card-text">
+                    <p class="card-text-title">Report #<span><%= report.id %></span></p>
+                    <p class="card-text-upload">Uploaded by: <span><%= report.username %></span>
+                    </br>on <span><%= report.date %></span> at <span><%= report.time %></span></p>
+                    <p class="card-text-location">Location:
+                    </br><%= report.location %></p>
+                    <p class="card-text-status"> Pollution status: <span class="<%= report.pollutionStatus %>"><%= report.pollutionStatus %></span></p>
+                </div>
+                <div class="card-image">
+                    <img src="<%= report.image %>"/>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>

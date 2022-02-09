@@ -1,0 +1,90 @@
+<div class="s2i-form-container">
+    <div class="s2i-form-container__title">
+        <p>Report a location</p>
+    </div>
+    <div class="s2i-form-container__form">
+        <form id="formReport" name="formReport" action="/report" method="POST" enctype="multipart/form-data">
+            <div class="grouping-container">
+                <div class="user-info">
+                    <p class="user-info__title">User info</p>
+                    <div class="user-info__field">
+                        <div>
+                            <label for="name" class="user-info__label">Your name:</label>
+                        </div>
+                        <div>
+                            <input name="username" type="text" class="user-info__input" id="name" placeholder="Insert your name here...">
+                            <p class="formats">*Max 35 characters.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-data">
+                    <p class="location-data__title">Location data</p>
+                    <div class="location-data__field">
+                        <div>
+                            <label for="state" class="location-data__label">State:</label>
+                        </div>
+                        <div>
+                            <input type="text" name="state" class="location-data__input" id="state" placeholder="Insert here...">
+                            <p class="formats">*Max 60 characters.</p>
+                        </div>
+                    </div>
+                    <div class="location-data__field">
+                        <div>
+                            <label for="city" class="location-data__label">City:</label>
+                        </div>
+                        <div>
+                            <input type="text" name="city" class="location-data__input" id="city" placeholder="Insert here...">
+                            <p class="formats">*Max 60 characters.</p>
+                        </div>
+                    </div>
+                    <div class="location-data__field">
+                        <div>
+                            <label for="address" class="location-data__label">Address:</label>
+                        </div>
+                        <div>
+                            <input type="text" name="address" class="location-data__input" id="address" placeholder="Insert here...">
+                            <p class="formats">*Max 200 characters.</p>
+                        </div>
+                    </div>
+                    <div class="location-data__field">
+                        <div>
+                            <label for="street-number" class="location-data__label">Street number:</label>
+                        </div>
+                        <div>
+                            <input type="text" name="streetNumber" class="location-data__input" id="streetNumber" placeholder="Insert here...">
+                            <p class="formats">*Max 10 characters.</p>
+                        </div>
+                    </div>
+                    <div class="location-data__field">
+                        <div>
+                            <label for="pollution" class="location-data__label">Pollution status:</label>
+                        </div>
+                        <div>
+                            <select id="pollution" name="pollution" class="btn s2i-button-primary text-white location-data__select" aria-label="Select status">
+                                <option value="" selected>Select status</option>
+                                <option value="minor">Minor</option>
+                                <option value="moderate">Moderate</option>
+                                <option value="severe">Severe</option>
+                                <option value="critical">Critical</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="location-data__field">
+                        <div>
+                            <label for="image" class="location-data__label">Image upload:</label>
+                        </div>
+                        <div class="upload-container">
+                            <input name="image" class="btn s2i-button-primary location-data__upload" type="file" id="image"/>
+                            <p id="show-file">No file selected</p>
+                            <p class="formats">*Only .jpg/.jpeg/.png images format below 2mb will be accepted.</p>
+                            <p class="formats"><br>(*) Required fields</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-area">
+                    <input id="submit-form" class="btn s2i-button-primary text-white" type="button" value="Submit" onclick="submitForm()">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,803 @@
+// Animations
+@keyframes up-and-down {
+    0%   {top: 0;}
+    25%  {top: 40px;}
+    50%  {top: 0;}
+    75%  {top: -40px;}
+    100% {top: 0;}
+  }
+
+// Global settings
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.max-size {
+    display: flex;
+    justify-content: center;
+}
+
+// Colors
+$green-primary: #008037;
+$green-secondary: #7ed957;
+$white-creamy: #fffaeb;
+$brown-primary: #ebded4;
+$gray-primary: #7e95a1;
+$gray-secondary: #bad2d7;
+
+// Other variables
+/* For latest news navbar */
+$a: 180px;
+
+
+// Styles
+body {
+    background-color: white;
+}
+
+// Navbar
+.nav {
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    &__s2i{
+        &-first {
+            background-color: $green-primary;
+        }
+        &-second {
+            background-color: $green-secondary;
+            height: 50px;
+            padding: 0 30px;
+        }
+        &-header{
+            font-size: 24px;
+            font-weight: lighter;
+            color: white;
+            &-logo {
+                width: 150px;
+                height: auto;
+            }
+            &:hover {
+                color: $green-primary;
+                background-color: white;
+            }
+        }
+        &-newslist {
+            width: calc(100% - $a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center; 
+            ul {
+                margin-bottom: 0 !important;
+            }
+            .article {
+                color: white;
+                white-space: nowrap; 
+                overflow: hidden;
+                text-overflow: ellipsis;
+                a {
+                    font-size: 20px;
+                    font-weight: lighter;
+                    color: white;
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
+        &-newstitle {
+            width: $a;            
+            font-weight: bold;
+            font-size: 24px;
+            color: white;
+            p {
+                margin: 0 !important;
+                margin-bottom: 0 !important;
+            }
+        }
+        &-title {
+            font-size: 24px;
+            color: white;
+            padding: 10px;
+            margin: 0;
+        }
+    }
+}
+.s2i {
+    &-footer {
+        width: 100%;
+        height: 50px;
+        background-color: $green-primary;
+        &__text {
+            text-align: center;
+            padding: 10px;
+            color: white;
+        }
+    }
+}
+
+// Homepage
+#homepage, #earth-status {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .s2i {
+        &-welcome {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: $white-creamy;
+            height: 600px;
+            &__text {
+                flex: 1;
+                text-align: center;
+                padding: 0 40px;
+                .text1 {
+                    font-size: 40px;
+                }
+                .text2 {
+                    font-size: 50px;
+                }
+                .text3 {
+                    font-size: 24px;
+                    margin-bottom: 0;
+                    margin: 10px auto;
+                }
+            }
+            &__earth {
+                flex: 1;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                    position: relative;
+                    width: 60%;
+                    max-width: 400px;
+                    animation-name: up-and-down;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: linear;
+                }
+            }
+        }
+        &-last-reports {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .reports {
+                margin-top: 20px;
+                width: 80%;
+                max-width: 800px;
+                &__text {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    &-header {
+                        font-size: 40px;
+                        margin-bottom: 0;
+                    }
+                    &-link {
+                        font-size: 20px;
+                        color: black;
+                    }
+                }
+                &__cards {
+                    display: flex;
+                    flex-direction: column;
+                    .card {
+                        display: flex;
+                        flex-direction: row;
+                        margin-bottom: 20px;
+                        background-color: $brown-primary;
+                        border: none;
+                        border-radius: 0;
+                        transition: box-shadow 0.7s, transform 0.7s;
+                        &:hover, &:focus {
+                            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                            transform: scale(1.01);
+                            transition: box-shadow 0.7s, transform 0.7s;
+                        }
+                        &-text {
+                            flex: 1.5;
+                            font-size: 20px;
+                            padding: 20px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-around;
+                            &-title, &-upload, &-location {
+                                margin-bottom: 0;
+                            }
+                            &-title {
+                                font-size: 30px;
+                            }
+                        }
+                        &-image {
+                            flex: 1.5;
+                            img {
+                                width: 100%;
+                                max-height: 350px;
+                                padding: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+            .s2i {
+                &-pagination {
+                    border: 0;
+                }
+                &-page-link {
+                    border-radius: 0;
+                    font-size: 24px;
+                    background-color: white;
+                    color: $green-primary;
+                    &-active {
+                        border-radius: 0;
+                        font-size: 24px;
+                        background-color: $green-primary;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Report page
+#report {
+    .s2i-form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .formats {
+            font-style: italic;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+        &__form {
+            display: flex;
+            justify-content: center;
+            background-color: $brown-primary;
+            margin-bottom: 20px;
+            .grouping-container {
+                width: 800px;
+                .location-data {
+                    &__field {
+                        padding: 10px 0;
+                    }
+                }
+                .user-info, .location-data {
+                    margin: 30px 80px;
+                    &__field {
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                    }
+                    &__title {
+                        font-size: 30px;
+                        font-weight: bold;
+                    }
+                    &__label {
+                        font-size: 24px;
+                    }
+                    &__input {
+                        width: 250px;
+                        background-color: transparent;
+                        border-width: 0;
+                        border-bottom: 1px solid black;
+                        color: black;
+                        font-size: 24px;
+                        &::placeholder {
+                            color: $gray-primary;
+                            font-weight: lighter;
+                        }
+                    }
+                    &__select {
+                        width: 250px;
+                        font-size: 24px;
+                        font-weight: lighter;
+                    }
+                    .upload-container {
+                        width: 250px;
+                        overflow: hidden;
+                        p {
+                            margin-bottom: 0;
+                        }
+                    }
+                    &__upload {
+                        color: transparent;
+                        &::before {
+                            content: 'Upload an image';
+                            color: white;
+                            font-size: 24px;
+                            font-weight: lighter;
+                            padding-left: 25px;
+                        }
+                        &::-webkit-file-upload-button {
+                            display: none;
+                        }   
+                    }
+                }
+                .submit-area {
+                    display: flex;
+                    justify-content: center;
+                    margin: 20px;
+                    input {
+                        width: 250px;
+                        font-size: 24px;
+                        font-weight: lighter;
+                    }
+                }
+            }
+        }
+        &__title {
+            width: 800px;
+            display: flex;
+            justify-content: flex-start;
+            font-size: 40px;
+            padding: 15px 0;
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+// Earth-status page
+#earth-status {
+    .s2i {
+        &-location {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            &__search {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px auto;
+            }
+            &__icon {
+                font-size: 24px;
+                margin: 0 20px 0 10px;
+            }
+            &__input {
+                font-size: 24px;
+                width: 290px;
+                background-color: transparent;
+                border-width: 0;
+                border-bottom: 1px solid black;
+                color: black;
+                font-size: 22px;
+                &::placeholder {
+                    color: $gray-primary;
+                    font-weight: lighter;
+                }
+            }
+            .reports {
+                margin: 10px;
+                &__text {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    &-header {
+                        text-align: center;
+                        font-size: 30px;
+                        margin-bottom: 0;
+                    }
+                    &-link {
+                        font-size: 20px;
+                        color: black;
+                    }
+                }
+            }
+        }
+        &-maps {
+            display: flex;
+            justify-content: center;
+            &__iframe {
+                border:0;
+                width: 100%;
+                height: 500px;
+                max-width: 800px;
+            }
+        }
+    }
+}
+
+// Error page
+.error {
+    &-page {
+        height: 100vh;
+        background-color: $green-primary;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &-button {
+        width: auto !important;
+    }
+}
+
+// Small components
+.s2i-button {
+    &-primary {
+        background-color: $green-primary;
+        border: none;
+        border-radius: 0;
+    }
+    &-big {
+        width: 250px;
+        font-size: 24px;
+        font-weight: lighter;
+    }
+}
+
+.s2i-submit-popup {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($gray-secondary, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__popup {
+        background-color: $white-creamy;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 40px;
+        p {
+            margin-bottom: 10px;
+        }
+        .title {
+            font-size: 50px;
+        }
+        .description {
+            font-size: 30px;
+            font-weight: lighter;
+        }
+        .subdescription {
+            font-size: 24px;
+            font-weight: lighter;
+        }
+    }
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+// Earth animation
+#outer {
+    overflow: hidden;
+}
+#outer div {
+    display: inline-block;
+}
+#loop {
+    white-space: nowrap;
+    animation: loop-anim 15s linear infinite;
+}
+@keyframes loop-anim {
+    0% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: -50% /* This works because of the div between "outer" and "loop" */
+    }
+}
+
+// Media queries
+@media (max-width: 767px) {
+    .collapse {
+        background-color: $green-primary;
+    }
+    .navbar {
+        background-color: $green-primary;
+        padding-top: 0;
+        padding-bottom: 0;
+        .s2i-menu {
+            color: white;
+        }
+        .container-fluid {
+            padding: 0 40px;
+        }
+    }
+    .nav {
+        display: none;
+        &__s2i {
+            &-second {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                height: 60px;
+            }
+            &-newstitle {
+                text-align: center;
+                width: auto;
+                font-size: 16px;
+            }
+            &-newslist {
+                width: 100%;
+                .article {
+                    a {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    .s2i {
+        &-collapse {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        &-footer {
+            height: auto;
+            &__text {
+                padding: 20px;
+            }
+        }
+    }
+    #homepage, #earth-status {
+        .s2i {
+            &-welcome {
+                height: 500px;
+                &__text {
+                    .text1 {
+                        font-size: 34px;
+                    }
+                    .text2 {
+                        font-size: 40px;
+                    }
+                    .text3 {
+                        font-size: 20px;
+                        margin: 5px auto;
+                    }
+                }
+                &__earth {
+                    display: none;
+                }
+            }
+            &-last-reports {
+                .reports {
+                    margin-top: 20px;
+                    width: 95%;
+                    align-items: center;
+                    &__text {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        &-header {
+                            font-size: 30px;
+                        }
+                    }
+                    &__cards {
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        .card {
+                            display: flex;
+                            flex-direction: column;
+                            max-width: 300px;
+                            margin: 5px;
+                            &-text {
+                                order: 2;
+                                flex: 2;
+                                font-size: 18px;
+                                padding: 10px;
+                                &-title {
+                                    font-size: 24px;
+                                }
+                            }
+                            &-image {
+                                img {
+                                    padding: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #earth-status {
+        .s2i {
+            &-maps {
+                &__iframe {
+                    height: 300px;
+                }
+            }
+        }
+    }
+    #report {
+        .s2i-form-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .formats {
+                font-style: italic;
+                font-size: 14px;
+                margin-bottom: 0;
+            }
+            &__form {
+                display: flex;
+                justify-content: center;
+                background-color: $brown-primary;
+                margin-bottom: 10px;
+                .grouping-container {
+                    width: auto;
+                    .location-data {
+                        &__field {
+                            padding: 10px 0;
+                        }
+                    }
+                    .user-info, .location-data {
+                        margin: 20px;
+                        &__title {
+                            font-size: 24px;
+                        }
+                        &__label {
+                            font-size: 20px;
+                            padding-right: 10px;
+                        }
+                        &__input {
+                            font-size: 20px;
+                        }
+                        &__select {
+                            font-size: 20px;
+                        }
+                        &__upload {
+                            color: transparent;
+                            &::before {
+                                content: 'Upload an image';
+                                font-size: 20px;
+                                padding-left: 45px;
+                            } 
+                        }
+                    }
+                }
+            }
+            &__title {
+                width: auto;
+                justify-content: center;
+                font-size: 30px;
+                padding: 15px 0;
+            }
+        }
+    }
+}
+@media (min-width: 768px) {
+    .navbar {
+        display: none;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 900px) {
+    #homepage, #earth-status {
+        .s2i {
+            &-welcome {
+                height: 500px;
+                &__text {
+                    .text1 {
+                        font-size: 34px;
+                    }
+                    .text2 {
+                        font-size: 40px;
+                    }
+                    .text3 {
+                        font-size: 20px;
+                        margin: 5px auto;
+                    }
+                }
+            }
+            &-last-reports {
+                .reports {
+                    width: 95%;
+                    &__cards {
+                        .card {
+                            &-text {
+                                &-status {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+    #report {
+        .s2i-form-container {
+            .formats {
+                font-style: italic;
+                font-size: 14px;
+            }
+            &__form {
+                .grouping-container {
+                    width: auto;
+                    .location-data {
+                        &__field {
+                            padding: 10px 0;
+                        }
+                    }
+                    .user-info, .location-data {
+                        margin: 30px;
+                        &__title {
+                            font-size: 30px;
+                        }
+                        &__label {
+                            font-size: 24px;
+                            padding-right: 10px;
+                        }
+                    }
+                }
+            }
+            &__title {
+                width: auto;
+            }
+        }
+    }
+}
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+    #homepage, #earth-status {
+        .s2i {
+            &-last-reports {
+                .reports {
+                    margin-top: 10px;
+                    &__text {
+                        &-header {
+                            font-size: 30px;
+                            margin-bottom: 0;
+                        }
+                        &-link {
+                            font-size: 20px;
+                            color: black;
+                        }
+                    }
+                    &__cards {
+                        .card {
+                            margin-bottom: 10px;
+                            &-text {
+                                flex: 2;
+                                font-size: 20px;
+                                padding: 20px;
+                                &-title {
+                                    font-size: 30px;
+                                }
+                                &-status {
+                                    margin-bottom: 0;
+                                }
+                            }
+                            &-image {
+                                img {
+                                    padding: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }      
+}
