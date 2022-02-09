@@ -1,14 +1,13 @@
 {
   "name": "s2iproject_nodejs",
   "version": "1.0.0",
-  "author": "Anthony Dei Medici"
   "description": "App that help monitoring polluted places",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
-  "author": "Chin0",
+  "author": "Anthony Dei Medici",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.24.0",
