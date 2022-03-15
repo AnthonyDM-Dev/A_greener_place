@@ -13,7 +13,7 @@ const getReportPage = async (req, res, next) => {
         // Sending response
         res.render('index', {
             news: newsList,
-            page: 'report'
+            page: 'report',
         });
     } catch (err) {
         if (!err.statusCode) {
@@ -110,7 +110,7 @@ const postReport = async (req, res, next) => {
         }
 
         // Validation successful: Posting on Database
-        var imgsrc = 'http://localhost:3000/assets/fake-cms/' + req.file.filename;
+        var imgsrc = `http://${process.env.HOST}:${process.env.PORT}/assets/fake-cms/` + req.file.filename;
         const postReport = await Report.postReport(
             req.body.username,
             req.body.state,

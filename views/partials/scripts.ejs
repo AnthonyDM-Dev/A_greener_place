@@ -27,7 +27,9 @@
 
     // POST form using fetch()
     async function submitForm() {
-        return await fetch("http://localhost:3000/report", {
+        const host = '<%= process.env.HOST %>';
+        const port = '<%= process.env.PORT %>';
+        return await fetch(`http://${host}:${port}/report`, {
             method: "POST",
             body: getDataURL(),
         })

@@ -1,4 +1,5 @@
 // Importing libraries
+require('dotenv').config()
 var express = require('express');
 var fs = require('fs');
 var sass = require('sass');
@@ -6,6 +7,7 @@ var sass = require('sass');
 // Importing routes & error handling
 var routes = require('./routes/routes');
 var errorControllers = require('./controllers/errorControllers');
+const req = require('express/lib/request');
 
 // Initialize express
 var app = express();

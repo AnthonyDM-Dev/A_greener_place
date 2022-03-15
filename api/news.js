@@ -10,8 +10,8 @@ var params = {
     q: 'pollution',
     pageSize: '5',
     exclude: 'seattlepi.com, startribune.com',
-    apiKey: 'fe94bcddb4c540cd836dc6ddafe8a5f9', // <= Sarà rimossa dopo il feedback di s2i.
-}
+    apiKey: process.env.NEWS_API_KEY,
+};
 
 // fetchNews: fetch filtered articles.
 var fetchNews = axios.get(`https://newsapi.org/v2/everything?sortBy=${params.sortBy}&language=${params.lang}&q=${params.q}&pageSize=${params.pageSize}&excludeDomains=${params.exclude}&apiKey=${params.apiKey}`)
@@ -19,10 +19,10 @@ var fetchNews = axios.get(`https://newsapi.org/v2/everything?sortBy=${params.sor
         return res.data.articles;
     })
     .catch(error => {
-        console.log(error);
+        //console.log(error);
         return array = [{ title: 'Something wrong with fetching data. Please check the backend.', url: '' }];
     });
 
-  module.exports = {
+module.exports = {
     fetchNews: fetchNews,
-}
+};
