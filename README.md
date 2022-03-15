@@ -16,14 +16,16 @@ Project is created with:
 
 ## Installation
 * Git pull this repository
-* run "npm install" inside the root of the project folder
-* run command "npm run serve" to run the server
-* Watch it live on localhost:8080.
+* run "npm install" inside the root of your project
+* check if the project is pointing on your database in config/config.json
+* have a check also in .env file
+* run "node migration.js up" inside the root of your project in order to create the table in your db.
+* run command "node app" to run the server
+* Enjoy :)
 
 ## Try it live
-To play it live, you can go to:
-"[https://trusting-mirzakhani-cfe3ce.netlify.app](https://trusting-mirzakhani-cfe3ce.netlify.app)"
+To watch it in action, click [here](http://137.184.15.242:3000/)
 
 ## App PDF Presentation
 To have a preview of the site you can have a look at my PDF
-presentation file: "[Progetto-VueJS-1-di-Anthony-Dei-Medici.pdf](https://github.com/AnthonyDM-Dev/LetsPlayToTicTacToe/blob/master/Progetto-VueJS-1-di-Anthony-Dei-Medici.pdf)"
+presentation file: "[Progetto-NodeJS-di-Anthony-Dei-Medici.pdf](https://github.com/AnthonyDM-Dev/A_greener_place/blob/master/Progetto-NodeJS-di-Anthony-Dei-Medici.pdf)"

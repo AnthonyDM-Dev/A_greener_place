@@ -1,1 +1,4 @@
 node_modules/
+assets/fake-cms/
+
+!assets/fake-cms/.gitkeep
