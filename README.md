@@ -26,7 +26,7 @@ Before starting, please be sure to have MySQL installed on your machine.
 * Enjoy :)
 
 ## Try it live
-To watch it in action, click [here](http://137.184.15.242:3000/)
+To watch it in action, click [here](http://137.184.15.242:80/)
 
 ## App PDF Presentation
 To have a preview of the site you can have a look at my PDF presentation file: "[Progetto-NodeJS-di-Anthony-Dei-Medici.pdf](https://github.com/AnthonyDM-Dev/A_greener_place/blob/master/Progetto-NodeJS-di-Anthony-Dei-Medici.pdf)"
